@@ -3,6 +3,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import axios from 'axios'
+import qs from 'qs'
 import './plugins/element.js'
 // 全局样式表
 import './assets/css/global.css'
@@ -11,6 +12,7 @@ import './assets/css/global.css'
 Vue.prototype.$http = axios
 axios.defaults.baseURL = 'http://192.168.43.215:5000/'
 Vue.config.productionTip = false
+Vue.prototype.$qs = qs
 
 new Vue({
   router,

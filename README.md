@@ -1,24 +1,64 @@
-# education
+## 6.15
 
-## Project setup
+#### 使用v-model实现表单的数据绑定
+
+首先在data()中定义v-model对象，然后将表单内的内容依次写入
+
+#### 每次使用一个新组件要在element.js中导入（因为是按需使用）
+
+表单里的数据突然可以在前端使用alert显示了，好奇怪，可恶
+
+#### 那么login里的任务只剩下验证了
+
+全局弹窗配置 $message 
+
+好吧，果然没有那么简单
+1) 服务器如何颁发给我登录的验证，让我始终保持在登录的状态  √
+2) 后端传给我的数据我验证的方法  √
+3) 设置过滤器，以保存的token值来访问  √
+
+虽然以上问题写完了，但是我连数据都传不了，解决这个有啥用嘛，可恶啊↓
+
+不愧是我，还是不能向后端发数据，问题出在哪里呢？
+网上的解决方法（因为ajax使用的传递数据的格式与我们传递数据的格式不同）：
+因此，使用qs库，对我们的数据格式进行转换，此时我们遇到了一个新的问题
+
 ```
-npm install
+Cannot use 'in' operator to search for 'validateStatus' in username=2001&password=123456&identity=2
 ```
 
-### Compiles and hot-reloads for development
+此问题还在解决，网上的方法包括但不限于：使用POST方法........下午和郝锐研究一下post方法的可能性。
+
+可恶啊什么蛇皮vue-resource差点把项目搞崩，而且加了vue-resource还访问404，就离谱，为什么过气的依赖还可以被引入
+
+现在的问题还是前端传递给后端的数据为NULL，问题就来了，为什么数据通路是好的，类型不对呢
+
+如果可以搞定这个问题，进度直接前进5%
+
+可恶，好烦啊，后面都写好了，就你这什么传值不行，可恶啊，你给力点你好我好大家好，不行吗？
+
+#### 蛇皮get，换成post就好了，可恶，气死我了
+
+登录就全搞定啦，剩下的就是选课那些了，感觉就是照葫芦画瓢应该挺快的。
+
+可恶，没有完全搞定，还差一个token值，回去再说吧
+
+
+
+## 6.16
+
+昨天未完成的任务
+
 ```
-npm run serve
+首先是后端传回的数据的选择，起码应该包括状态码以及token值（token值啊，后端搞快一点）
+状态码用来给予用户反馈：例如：登录成功、检查用户名密码、检查身份是否正确
+token值用来保存用户的登录状态
+其次是过滤器部分被我注释掉了，记得改回来
+上述完成之后可以将login功能push进仓库中
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+开冲开冲，今天把学生尽量写完
+
+完成了学生页面的优化

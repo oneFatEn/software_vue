@@ -17,12 +17,12 @@
         <el-menu background-color="#333744" text-color="#fff"
         active-text-color="#409EFF" :unique-opened="true" :collapse="isCollapse"
         :collapse-transition="false" router>
-          <el-menu-item index="s1">
+          <el-menu-item index="s-1">
             <i class="el-icon-position"></i>
             <span slot="title">课程表</span>
           </el-menu-item>
           <!-- 一级菜单 -->
-          <el-submenu index="s2">
+          <el-submenu index="s-2">
             <!-- 一级菜单的模板区域 -->
             <template slot="title">
               <!-- 图标 -->
@@ -32,12 +32,12 @@
             </template>
             <!-- 二级菜单 -->
             <el-menu-item-group>
-              <el-menu-item index="s21">必修课</el-menu-item>
-              <el-menu-item index="s22">选修课</el-menu-item>
+              <el-menu-item index="s-2-1">必修课</el-menu-item>
+              <el-menu-item index="s-2-2">选修课</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <!-- 一级菜单 -->
-          <el-submenu index="s3">
+          <el-submenu index="s-3">
             <!-- 一级菜单的模板区域 -->
             <template slot="title">
               <!-- 图标 -->
@@ -47,11 +47,11 @@
             </template>
             <!-- 二级菜单 -->
             <el-menu-item-group>
-              <el-menu-item index="s31">成绩查询</el-menu-item>
-              <el-menu-item index="s32">生成成绩单</el-menu-item>
+              <el-menu-item index="s-3-1">成绩查询</el-menu-item>
+              <el-menu-item index="s-3-2">生成成绩单</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-          <el-menu-item index="s4">
+          <el-menu-item index="s-4">
             <i class="el-icon-setting"></i>
             <span slot="title">导航四</span>
           </el-menu-item>

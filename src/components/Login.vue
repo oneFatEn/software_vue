@@ -80,16 +80,36 @@ export default {
           identity: this.loginForm.identity
         }))
         // console.log(res)
+        if (res === '0' && this.loginForm.identity === '1') {
+          // 使用sessionStorage存储token值
+          window.sessionStorage.setItem('Student_ID', this.loginForm.username)
+          this.$router.push('/home')
+          return this.$message.success('Login Success.Welcome,student ' + this.loginForm.username)
+        }
+        if (res === '0' && this.loginForm.identity === '2') {
+          // 使用sessionStorage存储token值
+          window.sessionStorage.setItem('Teacher_ID', this.loginForm.username)
+          this.$router.push('/home_teacher')
+          return this.$message.success('Login Success.Welcome,teacher ' + this.loginForm.username)
+        }
+        if (res === '0' && this.loginForm.identity === '3') {
+          // 使用sessionStorage存储token值
+          window.sessionStorage.setItem('Department_ID', this.loginForm.username)
+          this.$router.push('/home_department')
+          return this.$message.success('Login Success.Welcome,Dep_Manager ' + this.loginForm.username)
+        }
+        if (res === '0' && this.loginForm.identity === '4') {
+          // 使用sessionStorage存储token值
+          window.sessionStorage.setItem('School_ID', this.loginForm.username)
+          this.$router.push('/home_school')
+          return this.$message.success('Login Success.Welcome,Sch_Manager ' + this.loginForm.username)
+        }
         if (res === '1') {
-          return this.$message.error('Login Faliure - username')
+          return this.$message.error('Login Faliure - Username')
         }
         if (res === '2') {
-          return this.$message.error('Login Faliure - password')
+          return this.$message.error('Login Faliure - Password')
         }
-        this.$message.success('Login Success')
-        // 使用sessionStorage存储token值
-        window.sessionStorage.setItem('Student_ID', this.loginForm.username)
-        this.$router.push('/home')
       })
     }
   }

@@ -7,24 +7,37 @@
     </el-breadcrumb>
 
     <el-card class="box-card">
-    <el-form :model="StuSche" inline >
-      <el-form-item>
-        <el-input v-model="StuSche.year" placeholder="请输入查询年份"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-input v-model="StuSche.term" placeholder="请输入查询学期"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-input v-model="StuSche.from" placeholder="起始周"></el-input>
-      </el-form-item>
-      <span>~ </span>
-      <el-form-item>
-        <el-input v-model="StuSche.end" placeholder="终止周"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="getStuSche">查询</el-button>
-      </el-form-item>
-    </el-form>
+      <el-form :model="StuSche" inline >
+        <el-form-item>
+          <el-input v-model="StuSche.year" placeholder="请输入查询年份"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-input v-model="StuSche.term" placeholder="请输入查询学期"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-input v-model="StuSche.from" placeholder="起始周"></el-input>
+        </el-form-item>
+        <span>~ </span>
+        <el-form-item>
+          <el-input v-model="StuSche.end" placeholder="终止周"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-input v-model="StuSche.compulsory" placeholder="必修/选修/全部"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="getStuSche">查询</el-button>
+        </el-form-item>
+      </el-form>
+      <el-table :data="Schedule" border stripe >
+        <el-table-column type="index" align="center"></el-table-column>
+        <el-table-column label = "Mon" prop="0" align="center"></el-table-column>
+        <el-table-column label = "Tues" prop="1" align="center"></el-table-column>
+        <el-table-column label = "Wen" prop="2" align="center"></el-table-column>
+        <el-table-column label = "Thur" prop="3" align="center"></el-table-column>
+        <el-table-column label = "Fri" prop="4" align="center"></el-table-column>
+        <el-table-column label = "Sat" prop="5" align="center"></el-table-column>
+        <el-table-column label = "Sun" prop="6" align="center"></el-table-column>
+      </el-table>
     </el-card>
   </div>
 </template>
@@ -34,25 +47,35 @@ export default {
   data () {
     return {
       StuSche: {
-        year: '',
-        term: '',
-        from: '',
-        end: ''
-      }
+        year: '2020',
+        term: '1',
+        from: '1',
+        end: '16',
+        compulsory: '2'
+      },
+      Schedule: []
     }
   },
   methods: {
-    getStuSche () {
-      var week = 0
+    async getStuSche () {
+      var weeks = 0
       var flop = 1
       for (var i = 1; i <= 16; i++) {
         if (i >= this.StuSche.from && i <= this.StuSche.end) {
-          week = week + flop
+          weeks = weeks + flop
         }
         flop = flop * 2
       }
       // console.log(week)
-      window.sessionStorage.getItem('token')
+      const { data: res } = await this.$http.post('/scheduleStudent/scheduleFilter', this.$qs.stringify({
+        sid: window.sessionStorage.getItem('Student_ID'),
+        year: this.StuSche.year,
+        term: this.StuSche.term,
+        week: weeks,
+        compulsory: this.StuSche.compulsory
+      }))
+      console.log(res)
+      this.Schedule = res
     }
   }
 }

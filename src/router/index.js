@@ -3,7 +3,10 @@ import VueRouter from 'vue-router'
 import Login from '../components/Login.vue'
 import Home from '../components/Home.vue'
 import Schedule from '../components/Student/Schedule.vue'
+import ChooseCom from '../components/Student/ChooseCom.vue'
 import Welcome from '../components/Welcome.vue'
+import Score from '../components/Student/Score.vue'
+import ScoreList from '../components/Student/ScoreList.vue'
 
 Vue.use(VueRouter)
 
@@ -16,7 +19,10 @@ const routes = [
     redirect: '/welcome',
     children: [
       { path: '/welcome', component: Welcome },
-      { path: '/s1', component: Schedule }
+      { path: '/s-1', component: Schedule },
+      { path: '/s-2-1', component: ChooseCom },
+      { path: '/s-3-1', component: Score },
+      { path: '/s-3-2', component: ScoreList }
     ]
   }
 ]

@@ -21,7 +21,9 @@ import {
   Select,
   Option,
   Table,
-  TableColumn
+  TableColumn,
+  Row,
+  Col
 } from 'element-ui'
 
 Vue.use(Button)
@@ -45,5 +47,7 @@ Vue.use(Select)
 Vue.use(Option)
 Vue.use(Table)
 Vue.use(TableColumn)
+Vue.use(Row)
+Vue.use(Col)
 // 全局挂载
 Vue.prototype.$message = Message

@@ -13,7 +13,7 @@
       </el-table>
     <el-form>
         <el-form-item class="position">
-            <el-button type="primary" @click="printScoreList">打印成绩单</el-button>
+            <el-button type="primary" @click="printScoreList('http://192.168.43.215:5000/scoreStudent/createStudentScoreSheet')">打印成绩单</el-button>
         </el-form-item>
     </el-form>
     </el-card>
@@ -39,8 +39,9 @@ export default {
       console.log(res)
       this.ScoreList = res.courses
     },
-    printScoreList () {
+    printScoreList (src) {
       this.$http.post('/scoreStudent/createStudentScoreSheet', this.$qs.stringify({ uid: window.sessionStorage.getItem('Student_ID') }))
+      window.location.href = src
     }
   }
 }

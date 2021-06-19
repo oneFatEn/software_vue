@@ -8,25 +8,39 @@
 
     <el-card class="box-card">
       <el-form :model="StuSche" inline >
-        <el-form-item>
-          <el-input v-model="StuSche.year" placeholder="请输入查询年份"></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-input v-model="StuSche.term" placeholder="请输入查询学期"></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-input v-model="StuSche.from" placeholder="起始周"></el-input>
-        </el-form-item>
-        <span>~ </span>
-        <el-form-item>
-          <el-input v-model="StuSche.end" placeholder="终止周"></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-input v-model="StuSche.compulsory" placeholder="必修/选修/全部"></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="getStuSche">查询</el-button>
-        </el-form-item>
+        <el-row :gutter= 20 >
+          <el-col :span= 3  aria-label="年份">
+            <el-form-item>
+              <el-input v-model="StuSche.year" placeholder="请输入查询年份"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span= 3 >
+            <el-form-item>
+              <el-input v-model="StuSche.term" placeholder="请输入查询学期"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span= 3 >
+            <el-form-item>
+              <el-input v-model="StuSche.from" placeholder="起始周"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span= 1 >
+          <span>~ </span>
+          </el-col>
+          <el-col :span= 3 >
+            <el-form-item>
+              <el-input v-model="StuSche.end" placeholder="终止周"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span= 3 >
+            <el-form-item>
+              <el-input v-model="StuSche.compulsory" placeholder="必修/选修/全部"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-form-item>
+            <el-button type="primary" @click="getStuSche">查询</el-button>
+          </el-form-item>
+        </el-row>
       </el-form>
       <el-table :data="Schedule" border stripe >
         <el-table-column type="index" align="center"></el-table-column>

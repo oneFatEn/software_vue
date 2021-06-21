@@ -7,7 +7,7 @@
     </el-breadcrumb>
 
     <el-card class="box-card">
-      <div class="position">应修学分</div>
+      <div class="allposition">{{"已得学分: " + this.allCredit + "\t应修学分: " + this.needCredit}}</div>
       <el-table :data="ScoreList" border stripe>
         <el-table-column label="课程名称" prop="name"></el-table-column>
         <el-table-column label="课程成绩" prop="score"></el-table-column>
@@ -21,7 +21,9 @@ export default {
   data () {
     return {
       ScoreList: [],
-      total: 0
+      total: 0,
+      allCredit: '',
+      needCredit: ''
     }
   },
   created () {
@@ -34,6 +36,8 @@ export default {
       }))
       console.log(res)
       this.ScoreList = res.courses
+      this.allCredit = res.allCredit
+      this.needCredit = res.needCredit
       // console.log(this.CompulsorySchedule)
     }
   }
@@ -43,5 +47,8 @@ export default {
 <style lang="less" scoped>
 .el-table{
     margin-top: 10px;
+}
+.allposition{
+  text-align: center;
 }
 </style>

@@ -28,7 +28,7 @@
           <el-col :span=1>
           <span>~ </span>
           </el-col>
-          <el-col :span=1>
+          <el-col :span=3>
             <el-form-item>
               <el-input v-model="StuSche.end" placeholder="终止周"></el-input>
             </el-form-item>
@@ -81,12 +81,10 @@ export default {
         }
         flop = flop * 2
       }
-      // console.log(week)
-      const { data: res } = await this.$http.post('/scheduleStudent/scheduleFilter', this.$qs.stringify({
+      console.log(weeks)
+      const { data: res } = await this.$http.post('/scheduleTeacher/scheduleTeacherFilter', this.$qs.stringify({
         sid: window.sessionStorage.getItem('Teacher_ID'),
-        year: this.StuSche.year,
-        term: this.StuSche.term,
-        week: weeks,
+        oneHotWeek: weeks,
         compulsory: this.StuSche.compulsory
       }))
       console.log(res)

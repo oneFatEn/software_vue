@@ -110,6 +110,9 @@ export default {
         if (res === '2') {
           return this.$message.error('Login Faliure - Password')
         }
+        if (res === '3') {
+          return this.$message.error('Login Faliure - Identity')
+        }
       })
     }
   }

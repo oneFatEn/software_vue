@@ -77,7 +77,7 @@ export default {
   methods: {
     // 退出按钮
     logout () {
-      // window.sessionStorage.clear()
+      window.sessionStorage.clear()
       this.$router.push('/login')
     },
     // 导航栏收缩

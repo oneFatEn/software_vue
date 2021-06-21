@@ -7,12 +7,15 @@
 
     <el-card class="box-card">
       <el-table :data="CompulsorySchedule" border stripe>
-        <el-table-column label="课程名称" prop="name"></el-table-column>
-        <el-table-column label="任课教师" prop="teacher"></el-table-column>
-        <el-table-column label="上课地点" prop="classroom"></el-table-column>
-        <el-table-column label="上课时间" prop="day+time"></el-table-column>
-        <el-table-column label="授课周数" prop="week"></el-table-column>
-        <el-table-column label="操作">
+        <el-table-column label="课程名称" prop="name" align="center"></el-table-column>
+        <el-table-column label="任课教师" prop="teacher" align="center"></el-table-column>
+        <el-table-column label="上课地点" prop="classroom" align="center"></el-table-column>
+        <el-table-column label="上课时间" prop="day_time" align="center"></el-table-column>
+        <el-table-column label="授课周数" prop="week" align="center"></el-table-column>
+        <el-table-column label="操作" align="center">
+          <template slot-scope="scope">
+            <el-button type="primary" @click="submit(scope.$index)">选择</el-button>
+          </template>
         </el-table-column>
       </el-table>
     </el-card>
@@ -38,6 +41,14 @@ export default {
       console.log(res)
       this.CompulsorySchedule = res.result
       // console.log(this.CompulsorySchedule)
+    },
+    async submit (index) {
+      const res = await this.$http.post('/selectCourse/selectCourse', this.$qs.stringify({
+        uid: window.sessionStorage.getItem('Student_ID'),
+        cid: this.CompulsorySchedule[index].id
+      }))
+      console.log(res)
+      window.location.reload()
     }
   }
 }

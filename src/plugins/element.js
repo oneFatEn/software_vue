@@ -23,7 +23,9 @@ import {
   Table,
   TableColumn,
   Row,
-  Col
+  Col,
+  Switch,
+  Upload
 } from 'element-ui'
 
 Vue.use(Button)
@@ -49,5 +51,7 @@ Vue.use(Table)
 Vue.use(TableColumn)
 Vue.use(Row)
 Vue.use(Col)
+Vue.use(Switch)
+Vue.use(Upload)
 // 全局挂载
 Vue.prototype.$message = Message

@@ -18,52 +18,45 @@
         active-text-color="#409EFF" :unique-opened="true" :collapse="isCollapse"
         :collapse-transition="false" router>
           <!-- 一级菜单 -->
-          <el-submenu index="t-1">
+          <el-submenu index="sc-1">
             <!-- 一级菜单的模板区域 -->
             <template slot="title">
               <!-- 图标 -->
               <i class="el-icon-date"></i>
               <!-- 文本 -->
-              <span>授课信息</span>
+              <span>教务管理</span>
             </template>
             <!-- 二级菜单 -->
             <el-menu-item-group>
-              <el-menu-item index="t-1-1">课程表</el-menu-item>
-              <el-menu-item index="t-1-2">选课名单</el-menu-item>
+              <el-menu-item index="sc-1-1">开课申请单</el-menu-item>
+              <el-menu-item index="sc-1-2">课程成绩查询</el-menu-item>
+              <el-menu-item index="sc-1-3">讲台成绩查询</el-menu-item>
+              <el-menu-item index="sc-1-4">学生成绩查询</el-menu-item>
+              <el-menu-item index="sc-1-5">系所负责人</el-menu-item>
+              <el-menu-item index="sc-1-6">成绩审核</el-menu-item>
+              <el-menu-item index="sc-1-7">排课</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <!-- 一级菜单 -->
-          <el-submenu index="t-2">
+          <el-submenu index="s-2">
             <!-- 一级菜单的模板区域 -->
             <template slot="title">
               <!-- 图标 -->
               <i class="el-icon-menu"></i>
               <!-- 文本 -->
-              <span>课程成绩</span>
+              <span>培养方案</span>
             </template>
             <!-- 二级菜单 -->
             <el-menu-item-group>
-              <el-menu-item index="t-2-1">成绩填写</el-menu-item>
-              <el-menu-item index="t-2-2">成绩勘误</el-menu-item>
-              <el-menu-item index="t-2-3">成绩分析表</el-menu-item>
+              <el-menu-item index="sc-2-1">初始培养方案</el-menu-item>
+              <el-menu-item index="sc-2-2">编辑培养方案</el-menu-item>
+              <el-menu-item index="sc-2-3">培养方案设定</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-          <!-- 一级菜单 -->
-          <el-submenu index="t-3">
-            <!-- 一级菜单的模板区域 -->
-            <template slot="title">
-              <!-- 图标 -->
-              <i class="el-icon-document"></i>
-              <!-- 文本 -->
-              <span>课程相关</span>
-            </template>
-            <!-- 二级菜单 -->
-            <el-menu-item-group>
-              <el-menu-item index="t-3-1">选课要求设定</el-menu-item>
-              <el-menu-item index="t-3-2">调/停课</el-menu-item>
-              <el-menu-item index="t-3-3">开课申请</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
+          <el-menu-item index="sc-3">
+            <i class="el-icon-setting"></i>
+            <span slot="title">调/停课审批</span>
+          </el-menu-item>
         </el-menu>
       </el-aside>
       <!-- -->
@@ -95,7 +88,7 @@ export default {
     },
     // 返回主页
     returnHome () {
-      this.$router.push('/home_teacher')
+      this.$router.push('/home_school')
     }
   }
 }

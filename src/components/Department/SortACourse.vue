@@ -86,29 +86,12 @@ export default {
         termList: [
           {
             value: '1',
-            label: '大一上'
+            label: '上学期'
           }, {
             value: '2',
-            label: '大一下'
-          }, {
-            value: '4',
-            label: '大二上'
-          }, {
-            value: '8',
-            label: '大二下'
-          }, {
-            value: '16',
-            label: '大三上'
-          }, {
-            value: '32',
-            label: '大三下'
-          }, {
-            value: '64',
-            label: '大四上'
-          }, {
-            value: '128',
-            label: '大四下'
-          }]
+            label: '下学期'
+          }
+        ]
       }
     }
   },
@@ -147,14 +130,10 @@ export default {
       // console.log(this.CourseSet.class)
     },
     async submit () {
-      console.log(this.CourseSet.term)
-      console.log(this.CourseSet.class)
-      console.log(this.$route.params.courseId)
+      /*
       await this.$http.post('teacherSetPlatform/setPlatformInformation', this.$qs.stringify({
-        pid: this.$route.params.courseId,
-        selectGradeList: JSON.stringify(this.CourseSet.term),
-        class_id_list: JSON.stringify(this.CourseSet.class)
       }))
+      */
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-breadcrumb separator-class="el-icon-arrow-right">
-    <el-breadcrumb-item :to="{ path: '/home_department' }">首页</el-breadcrumb-item>
+    <el-breadcrumb-item :to="{ path: '/home_school' }">首页</el-breadcrumb-item>
     <el-breadcrumb-item>管理</el-breadcrumb-item>
     <el-breadcrumb-item>自动排课</el-breadcrumb-item>
 <!-- <input  type="text"> -->
@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     async autosubmit () {
-      const res = await this.$http.post('collageManager/autoArrangeCourse')
+      const res = await this.$http.post('schoolManager/autoArrangeCourse')
       console.log(res)
       if (res.status === 200) {
         return this.$message.success('排课成功!')

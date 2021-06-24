@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     async getAllTeacher () {
-      const res = await this.$http.post('/collageManager/showCollageTeacher', this.$qs.stringify({
+      const res = await this.$http.post('/schoolManager/showCollageTeacher', this.$qs.stringify({
         uid: window.sessionStorage.getItem('Department_ID')
       }))
       this.openCourse.teacherList = res.data
@@ -58,7 +58,7 @@ export default {
       console.log(this.openCourse.teacher)
     },
     submitForm () {
-      this.$http.post('/collageManager/setStartCourse', this.$qs.stringify({
+      this.$http.post('/schoolManager/setStartCourse', this.$qs.stringify({
         course_name: this.openCourse.course,
         tid: this.openCourse.teacher
       }))

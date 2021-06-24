@@ -37,13 +37,13 @@ export default {
   },
   methods: {
     async getAllScore () {
-      const res = await this.$http.post('collageManager/showUpdateScoreApplyNotPass')
+      const res = await this.$http.post('schoolManager/showUpdateScoreApplyNotPass')
       console.log(res)
       this.ScoreList = res.data
       // console.log(this.CourseSet.collageList)
     },
     async submit (id) {
-      const res = await this.$http.post('collageManager/passOneUpdateScore', this.$qs.stringify({
+      const res = await this.$http.post('schoolManager/passOneUpdateScore', this.$qs.stringify({
         rid: id
       }))
       console.log(res)

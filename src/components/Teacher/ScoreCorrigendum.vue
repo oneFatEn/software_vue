@@ -3,8 +3,8 @@
     <el-breadcrumb separator-class="el-icon-arrow-right">
     <el-breadcrumb-item :to="{ path: '/home_teacher' }">首页</el-breadcrumb-item>
     <el-breadcrumb-item>授课信息</el-breadcrumb-item>
-    <el-breadcrumb-item>选课名单</el-breadcrumb-item>
-    <el-breadcrumb-item>该课学生名单</el-breadcrumb-item>
+    <el-breadcrumb-item>课程成绩</el-breadcrumb-item>
+    <el-breadcrumb-item>具体课程成绩勘误</el-breadcrumb-item>
 <!-- <input  type="text"> -->
     </el-breadcrumb>
     <el-card class="box-card">

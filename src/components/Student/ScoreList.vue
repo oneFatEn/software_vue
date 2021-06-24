@@ -3,7 +3,7 @@
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item>成绩</el-breadcrumb-item>
-      <el-breadcrumb-item>成绩查询</el-breadcrumb-item>
+      <el-breadcrumb-item>生成成绩单</el-breadcrumb-item>
     </el-breadcrumb>
 
     <el-card class="box-card">
@@ -13,7 +13,7 @@
       </el-table>
     <el-form>
         <el-form-item class="position">
-            <el-button type="primary" @click="printScoreList('http://192.168.43.215:5000/scoreStudent/createStudentScoreSheet')">打印成绩单</el-button>
+            <el-button type="primary" @click="printScoreList">打印成绩单</el-button>
         </el-form-item>
     </el-form>
     </el-card>

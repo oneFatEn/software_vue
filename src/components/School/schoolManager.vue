@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     async getStudentList () {
-      const { data: res } = await this.$http.post('/collageManager/showTeacher', this.$qs.stringify({
+      const { data: res } = await this.$http.post('/schoolManager/showTeacher', this.$qs.stringify({
         uid: window.sessionStorage.getItem('Department_ID')
       }))
       this.teacherList = res
@@ -41,7 +41,7 @@ export default {
     },
     async switchChange (userinfo) {
       console.log(userinfo.id)
-      await this.$http.post('/collageManager/addTeacherToCollageDirector', this.$qs.stringify({
+      await this.$http.post('/schoolManager/addTeacherToCollageDirector', this.$qs.stringify({
         tid: userinfo.id,
         cid: window.sessionStorage.getItem('Department_ID')
       }))

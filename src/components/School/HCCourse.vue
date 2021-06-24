@@ -1,10 +1,10 @@
 <template>
   <div>
     <el-breadcrumb separator-class="el-icon-arrow-right">
-    <el-breadcrumb-item :to="{ path: '/home_department' }">首页</el-breadcrumb-item>
+    <el-breadcrumb-item :to="{ path: '/home_school' }">首页</el-breadcrumb-item>
     <el-breadcrumb-item>管理</el-breadcrumb-item>
     <el-breadcrumb-item>选课要求设定</el-breadcrumb-item>
-    <el-breadcrumb-item>手动排课</el-breadcrumb-item>
+    <el-breadcrumb-item>排必修课</el-breadcrumb-item>
 <!-- <input  type="text"> -->
     </el-breadcrumb>
     <el-card class="box-card">
@@ -80,7 +80,7 @@ export default {
   },
   methods: {
     async getAllpId () {
-      const res = await this.$http.post('collageManager/needArrangeCollageCourseQuery', this.$qs.stringify({
+      const res = await this.$http.post('schoolManager/needArrangeCollageCourseQuery', this.$qs.stringify({
         uid: window.sessionStorage.getItem('Department_ID'),
         public: 0
       }))
@@ -89,7 +89,7 @@ export default {
     },
     async getTime (course) {
       console.log(course)
-      const res = await this.$http.post('collageManager/showSelectableTimeList', this.$qs.stringify({
+      const res = await this.$http.post('schoolManager/showSelectableTimeList', this.$qs.stringify({
         pid: course
       }))
       this.Course.timeList = res.data
@@ -98,7 +98,7 @@ export default {
     async getClassroom (bool) {
       if (bool === false) {
         console.log(JSON.stringify(this.Course.time))
-        const res = await this.$http.post('collageManager/showSelectableClassroom', this.$qs.stringify({
+        const res = await this.$http.post('schoolManager/showSelectableClassroom', this.$qs.stringify({
           pid: this.Course.course,
           day_time_id_list: JSON.stringify(this.Course.time)
         }))
@@ -108,12 +108,12 @@ export default {
     },
     async getWeek (classroom) {
       console.log(JSON.stringify(this.Course.time))
-      const res = await this.$http.post('collageManager/showSelectableWeek')
+      const res = await this.$http.post('schoolManager/showSelectableWeek')
       console.log(res)
       this.Course.weekList = res.data
     },
     async submit () {
-      const res = await this.$http.post('collageManager/arrangeProfessionalCourse', this.$qs.stringify({
+      const res = await this.$http.post('schoolManager/arrangeProfessionalCourse', this.$qs.stringify({
         pid: this.Course.course,
         week: this.Course.week,
         day_time_id_list: JSON.stringify(this.Course.time),

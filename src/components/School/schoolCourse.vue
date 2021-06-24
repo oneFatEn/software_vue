@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     async submitId () {
-      const { data: res } = await this.$http.post('/collageManager/CourseScoreQuery', this.$qs.stringify({
+      const { data: res } = await this.$http.post('/schoolManager/CourseScoreQuery', this.$qs.stringify({
         cid: this.score.id,
         year: this.score.year,
         term: this.score.term

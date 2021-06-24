@@ -21,21 +21,10 @@
             <i class="el-icon-position"></i>
             <span slot="title">课程表</span>
           </el-menu-item>
-          <!-- 一级菜单 -->
-          <el-submenu index="s-2">
-            <!-- 一级菜单的模板区域 -->
-            <template slot="title">
-              <!-- 图标 -->
-              <i class="el-icon-menu"></i>
-              <!-- 文本 -->
-              <span>选课</span>
-            </template>
-            <!-- 二级菜单 -->
-            <el-menu-item-group>
-              <el-menu-item index="s-2-1">必修课</el-menu-item>
-              <el-menu-item index="s-2-2">选修课</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
+          <el-menu-item index="s-2">
+            <i class="el-icon-setting"></i>
+            <span slot="title">选课</span>
+          </el-menu-item>
           <!-- 一级菜单 -->
           <el-submenu index="s-3">
             <!-- 一级菜单的模板区域 -->
@@ -51,10 +40,6 @@
               <el-menu-item index="s-3-2">生成成绩单</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-          <el-menu-item index="s-4">
-            <i class="el-icon-setting"></i>
-            <span slot="title">导航四</span>
-          </el-menu-item>
         </el-menu>
       </el-aside>
       <!-- -->

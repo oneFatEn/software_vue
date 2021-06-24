@@ -52,6 +52,15 @@
         <el-table-column label = "Sat" prop="5" align="center"></el-table-column>
         <el-table-column label = "Sun" prop="6" align="center"></el-table-column>
       </el-table>
+      <el-form :model="email">
+        <el-form-item>
+          <el-switch
+            v-model="email.value"
+            active-color="#13ce66"
+            inactive-color="#ff4949" @change="changeValue">
+          </el-switch>
+        </el-form-item>
+      </el-form>
     </el-card>
   </div>
 </template>
@@ -61,13 +70,16 @@ export default {
   data () {
     return {
       StuSche: {
-        year: '2020',
-        term: '1',
-        from: '1',
-        end: '16',
-        compulsory: '2'
+        year: '',
+        term: '',
+        from: '',
+        end: '',
+        compulsory: ''
       },
-      Schedule: []
+      Schedule: [],
+      email: {
+        value: ''
+      }
     }
   },
   methods: {
@@ -90,6 +102,12 @@ export default {
       }))
       console.log(res)
       this.Schedule = res
+    },
+    async changeValue () {
+      const { data: res } = await this.$http.post('/sendEmail/switchSendEmail', this.$qs.stringify({
+        sid: window.sessionStorage.getItem('Student_ID')
+      }))
+      console.log(res)
     }
   }
 }

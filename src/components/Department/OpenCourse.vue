@@ -57,11 +57,12 @@ export default {
     chooseGrade (index) {
       console.log(this.openCourse.teacher)
     },
-    submitForm () {
+    async submitForm () {
       this.$http.post('/collageManager/setStartCourse', this.$qs.stringify({
         course_name: this.openCourse.course,
         tid: this.openCourse.teacher
       }))
+      return this.$message.success('开课申请提交成功')
     }
   }
 }

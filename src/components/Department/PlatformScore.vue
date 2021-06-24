@@ -37,9 +37,9 @@ export default {
   data () {
     return {
       score: {
-        id: '1',
-        year: '2017',
-        term: '0'
+        id: '',
+        year: '',
+        term: ''
       },
       CourseList: [],
       total: 0

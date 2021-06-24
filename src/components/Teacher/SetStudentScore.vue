@@ -3,17 +3,18 @@
     <el-breadcrumb separator-class="el-icon-arrow-right">
     <el-breadcrumb-item :to="{ path: '/home_teacher' }">首页</el-breadcrumb-item>
     <el-breadcrumb-item>授课信息</el-breadcrumb-item>
-    <el-breadcrumb-item>选课名单</el-breadcrumb-item>
-    <el-breadcrumb-item>该课学生名单</el-breadcrumb-item>
+    <el-breadcrumb-item>成绩填写</el-breadcrumb-item>
+    <el-breadcrumb-item>具体课程成绩填写</el-breadcrumb-item>
 <!-- <input  type="text"> -->
     </el-breadcrumb>
     <el-card class="box-card">
-      <el-form :model="studentScore" >
+      <el-form :model="studentScore" style="text-align: center">
         <el-input
           v-model="studentScore.percent"
-          :rows= 7
           placeholder="成绩占比"
-          class="input" >
+          class="input"
+          style="width: 25%"
+          >
         </el-input>
         <el-table :data="studentScore.StudentList" border stripe class="table">
           <el-table-column label="学号" prop="information.id"></el-table-column>
@@ -46,7 +47,7 @@ export default {
   data () {
     return {
       studentScore: {
-        percent: '0',
+        percent: '',
         StudentList: []
       }
     }

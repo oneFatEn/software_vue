@@ -171,6 +171,7 @@ export default {
         selectGradeList: JSON.stringify(this.platform.grade),
         class_id_list: JSON.stringify(this.platform.class)
       }))
+      return this.$message.success('提交成功')
     }
   }
 }

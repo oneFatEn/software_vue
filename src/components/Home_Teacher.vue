@@ -45,7 +45,7 @@
             <el-menu-item-group>
               <el-menu-item index="t-2-1">成绩填写</el-menu-item>
               <el-menu-item index="t-2-2">成绩勘误</el-menu-item>
-              <el-menu-item index="t-2-3">成绩分析表</el-menu-item>
+              <el-menu-item index="t-2-3">成绩分析单</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <!-- 一级菜单 -->

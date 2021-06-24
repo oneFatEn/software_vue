@@ -62,11 +62,11 @@ export default {
   data () {
     return {
       StuSche: {
-        year: '2020',
-        term: '1',
-        from: '1',
-        end: '16',
-        compulsory: '2'
+        year: '',
+        term: '',
+        from: '',
+        end: '',
+        compulsory: ''
       },
       Schedule: []
     }

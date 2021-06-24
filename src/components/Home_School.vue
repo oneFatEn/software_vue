@@ -34,7 +34,9 @@
               <el-menu-item index="sc-1-4">学生成绩查询</el-menu-item>
               <el-menu-item index="sc-1-5">系所负责人</el-menu-item>
               <el-menu-item index="sc-1-6">成绩审核</el-menu-item>
-              <el-menu-item index="sc-1-7">排课</el-menu-item>
+              <el-menu-item index="sc-1-7">排专业课</el-menu-item>
+              <el-menu-item index="sc-1-8">排公共课</el-menu-item>
+              <el-menu-item index="sc-1-9">自动排课</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <!-- 一级菜单 -->

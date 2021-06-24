@@ -8,7 +8,7 @@ import ChooseCom from '../components/Student/ChooseCom.vue'
 import Welcome from '../components/Welcome.vue'
 import Score from '../components/Student/Score.vue'
 import ScoreList from '../components/Student/ScoreList.vue'
-// 关于老师的路由(15)
+// 关于老师的路由(17)
 import homeTeacher from '../components/Home_Teacher.vue'
 import welcomeTeacher from '../components/Teacher/Welcome.vue'
 import teacherSchedule from '../components/Teacher/Schedule.vue'
@@ -25,8 +25,9 @@ import stopClass from '../components/Teacher/StopClass.vue'
 import apply from '../components/Teacher/Apply.vue'
 import applyCourse from '../components/Teacher/ApplyCourse.vue'
 import applyPlatform from '../components/Teacher/ApplyPlatform.vue'
+import analyseScore from '../components/Teacher/analyseScore.vue'
 
-// 关于院管理的路由(10)
+// 关于院管理的路由(11)
 import homeDepartment from '../components/Home_Department.vue'
 import welcomeDepartment from '../components/Department/Welcome.vue'
 import openCourse from '../components/Department/OpenCourse.vue'
@@ -39,7 +40,7 @@ import sortHCourse from '../components/Department/SortHCourse.vue'
 import sortACourse from '../components/Department/SortACourse.vue'
 import approval from '../components/Department/Approval.vue'
 
-// 关于学校的路由(2)
+// 关于学校的路由(15)
 import homeSchool from '../components/Home_School.vue'
 import welcomeSchool from '../components/School/Welcome_School.vue'
 import initmanage from '../components/School/initManage.vue'
@@ -52,7 +53,9 @@ import schoolPlatform from '../components/School/SchoolPlatform.vue'
 import schoolStudent from '../components/School/studentScore.vue'
 import schoolManager from '../components/School/schoolManager.vue'
 import schoolExamineScore from '../components/School/schoolExamineScore.vue'
-
+import HCCourse from '../components/School/HCCourse.vue'
+import HGCourse from '../components/School/HGCourse.vue'
+import ACourse from '../components/School/ACourse.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -65,7 +68,7 @@ const routes = [
     children: [
       { path: '/welcome', component: Welcome },
       { path: '/s-1', component: Schedule },
-      { path: '/s-2-1', component: ChooseCom },
+      { path: '/s-2', component: ChooseCom },
       { path: '/s-3-1', component: Score },
       { path: '/s-3-2', component: ScoreList }
     ]
@@ -82,6 +85,7 @@ const routes = [
       { path: '/t-2-1', component: setScore },
       { path: '/setStudentScore', name: 'setStudentScore', component: setStudentScore },
       { path: '/t-2-2', component: Corrigendum },
+      { path: '/t-2-3', component: analyseScore },
       { path: '/scoreCorrigendum', name: 'scoreCorrigendum', component: scoreCorrigendum },
       { path: '/t-3-1', component: requirement },
       { path: '/changeRequirement', name: 'changeRequirement', component: changeRequirement },
@@ -121,6 +125,9 @@ const routes = [
       { path: '/sc-1-4', component: schoolStudent },
       { path: '/sc-1-5', component: schoolManager },
       { path: '/sc-1-6', component: schoolExamineScore },
+      { path: '/sc-1-7', component: HCCourse },
+      { path: '/sc-1-8', component: HGCourse },
+      { path: '/sc-1-9', component: ACourse },
       { path: '/sc-2-1', component: initmanage },
       { path: '/sc-2-2', component: editmanage },
       { path: '/sc-2-3', component: setManage },

@@ -8,33 +8,33 @@
 <!-- <input  type="text"> -->
     </el-breadcrumb>
     <el-card class="box-card">
-      <el-form :model="StopClass" class="form">
+      <el-form :model="StopClass" class="form" style="text-align: center">
         <el-form-item>
-          <el-input v-model="StopClass.reason" placeholder="请输入停/调课理由"></el-input>
+          <el-input v-model="StopClass.reason" placeholder="请输入停/调课理由" style="width: 25%"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-input v-model="StopClass.oldWeek" placeholder="请输入要停/调课的周次"></el-input>
+          <el-input v-model="StopClass.oldWeek" placeholder="请输入要停/调课的周次" style="width: 25%"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-input v-model="StopClass.oldDay" placeholder="请输入要停/调课的星期数"></el-input>
+          <el-input v-model="StopClass.oldDay" placeholder="请输入要停/调课的星期数" style="width: 25%"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-input v-model="StopClass.oldTime" placeholder="请输入要停/调课的课节数"></el-input>
+          <el-input v-model="StopClass.oldTime" placeholder="请输入要停/调课的课节数" style="width: 25%"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-input v-model="StopClass.oldClassroom" placeholder="请输入停/调课的教室"></el-input>
+          <el-input v-model="StopClass.oldClassroom" placeholder="请输入停/调课的教室" style="width: 25%"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-input v-model="StopClass.newWeek" placeholder="请输入新开课的周次"></el-input>
+          <el-input v-model="StopClass.newWeek" placeholder="请输入新开课的周次" style="width: 25%"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-input v-model="StopClass.newDay" placeholder="请输入新开课的星期数"></el-input>
+          <el-input v-model="StopClass.newDay" placeholder="请输入新开课的星期数" style="width: 25%"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-input v-model="StopClass.newTime" placeholder="请输入新开课的课节数"></el-input>
+          <el-input v-model="StopClass.newTime" placeholder="请输入新开课的课节数" style="width: 25%"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-input v-model="StopClass.newClassroom" placeholder="请输入新开课的教室"></el-input>
+          <el-input v-model="StopClass.newClassroom" placeholder="请输入新开课的教室" style="width: 25%"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="submit">提交</el-button>
@@ -49,15 +49,15 @@ export default {
   data () {
     return {
       StopClass: {
-        reason: '不舒服',
-        oldWeek: '1',
-        oldDay: '1',
-        oldClassroom: '逸夫楼101',
-        newWeek: '2',
-        newDay: '3',
-        newClassroom: '逸夫楼101',
-        newTime: '1',
-        oldTime: '4'
+        reason: '',
+        oldWeek: '',
+        oldDay: '',
+        oldClassroom: '',
+        newWeek: '',
+        newDay: '',
+        newClassroom: '',
+        newTime: '',
+        oldTime: ''
       }
     }
   },
